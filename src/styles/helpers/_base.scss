@@ -1,0 +1,36 @@
+html,
+body {
+	position: relative;
+	font-family: $mainFont;
+	color: $mainFontColor;
+	font-size: $mainFontSize;
+	line-height: $mainLineHeight;
+	font-weight: $mainFontWeight;
+	max-width: $smTableWidth;
+	min-width: $smPhoneWidth;
+	margin: 0 auto;
+	background-color: $primaryColor;
+	scroll-behavior: smooth;
+}
+
+.button {
+	@include size(135px, 45px);
+	color: $backGroundColor;
+	background-color: $primaryColor;
+	cursor: pointer;
+	transition: 0.3s linear;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.container {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+}

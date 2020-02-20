@@ -6,11 +6,9 @@
 	"license": "MIT",
 	"main": "src/index.html",
 	"scripts": {
-		"clean": "rm -rf dist/*",
-		"dev:parcel": "parcel src/index.html --open",
-		"build:parcel": "parcel build src/index.html",
-		"dev": "npm run clean && npm run dev:parcel",
-		"build": "npm run clean && npm run build:parcel"
+		"dev": "npm run clean && parcel src/index.html --open",
+		"build": "npm run clean && parcel build src/index.html",
+		"clean": "rm -rf dist/*"
 	},
 	"browserslist": {
 		"production": [
@@ -28,10 +26,9 @@
 		"@babel/core": "^7.8.4",
 		"@babel/preset-env": "^7.8.4",
 		"autoprefixer": "^9.7.4",
+		"node-sass": "^4.13.1",
 		"parcel-bundler": "^1.12.4",
-		"parcel-plugin-imagemin": "^3.0.0",
-		"postcss-modules": "^1.5.0",
-		"node-sass": "^4.13.1"
+		"postcss-modules": "^1.5.0"
 	},
 	"dependencies": {}
 }
