@@ -50,8 +50,9 @@
 	}
 
 	.fade {
+		height: 0;
 		opacity: 0;
-		transition: 0.3s linear;
+		transition: 0.4s ease-out;
 	}
 
 	&__item {
@@ -59,12 +60,9 @@
 		grid-template-columns: minmax(100px, 1fr) auto;
 		grid-gap: 0.5rem;
 		align-items: center;
-		min-height: 45px;
+		height: 45px;
 		border-bottom: 1px solid $borderColor;
-
-		&:first-child {
-			margin-top: 10px;
-		}
+		transition: 0.4s ease-out;
 
 		&:hover .list__remove-icon {
 			opacity: 1;

@@ -3,10 +3,13 @@ const taskList = document.querySelector('.list');
 
 function addTask(task) {
 	const li = document.createElement('li');
-	li.classList.add('list__item');
+	li.classList.add('list__item', 'fade');
 	li.innerHTML = `<p class="list__text">${task}</p>
 									<i class="list__remove-icon fas fa-trash-alt"></i>`;
-	taskList.append(li);
+	taskList.prepend(li);
+	setTimeout(() => {
+		li.classList.remove('fade');
+	}, 50);
 }
 
 inputForm.addEventListener('submit', e => {
@@ -23,7 +26,7 @@ taskList.addEventListener('click', e => {
 		listItem.classList.toggle('fade');
 		setTimeout(() => {
 			listItem.remove();
-		}, 500);
+		}, 350);
 	}
 
 	if (e.target.matches('.list__text')) {
