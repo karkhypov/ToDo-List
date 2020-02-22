@@ -3,46 +3,34 @@
 @import 'helpers/mixins';
 @import 'helpers/base';
 
-.checked {
-	font-style: italic;
-	text-decoration: line-through;
-	opacity: 0.4;
-	transition: 0.4s;
-}
-
-.fade {
-	opacity: 0;
-	transition: 0.5s linear;
-}
-
 .todo {
-	margin-top: 15px;
+	margin: 10px 0;
 	padding: 25px;
 	background-color: $backGroundColor;
 	border-radius: 20px;
-	box-shadow: 0 0 15px black;
-	transition: 0.3s;
+	box-shadow: 0 0 10px black;
 }
 
 .input-form {
 	display: grid;
-	grid-template-columns: 1fr auto;
+	grid-template-columns: minmax(150px, auto) minmax(80px, 135px);
 	height: 45px;
 
 	.button {
+		@include size(auto);
 		border-radius: 0 5px 5px 0;
 	}
 
 	&__field {
 		font-size: 1.2rem;
-		padding: 0 10px 0 10px;
-		border: 1px solid $borderColor;
+		padding: 0 10px;
+		border: 1.5px solid $borderColor;
 		border-right: none;
 		border-radius: 5px 0 0 5px;
-		transition: 0.3s;
+		transition: 0.3s linear;
 
 		&::placeholder {
-			opacity: 0.8;
+			opacity: 0.5;
 		}
 
 		&:hover,
@@ -54,32 +42,47 @@
 }
 
 .list {
-	transition: 0.3s;
+	.checked {
+		font-style: italic;
+		text-decoration: line-through;
+		opacity: 0.4;
+		transition: 0.2s linear;
+	}
+
+	.fade {
+		opacity: 0;
+		transition: 0.3s linear;
+	}
 
 	&__item {
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: minmax(100px, 1fr) auto;
 		grid-gap: 0.5rem;
 		align-items: center;
 		min-height: 45px;
 		border-bottom: 1px solid $borderColor;
-		transition: 0.3s;
 
-		&:hover .list__remove {
+		&:first-child {
+			margin-top: 10px;
+		}
+
+		&:hover .list__remove-icon {
 			opacity: 1;
-			margin-right: 5px;
+			transform: translate(-3px);
 		}
 	}
 
 	&__text {
 		font-size: 0.9rem;
+		overflow-wrap: break-word;
+		padding: 5px;
 		cursor: pointer;
 	}
 
-	&__remove {
+	&__remove-icon {
 		opacity: 0;
 		color: $mainFontColor;
-		transition: 0.2s;
+		transition: 0.2s linear;
 
 		&:hover {
 			color: $primaryColor;

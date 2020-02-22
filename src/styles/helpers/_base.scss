@@ -7,7 +7,6 @@ body {
 	line-height: $mainLineHeight;
 	font-weight: $mainFontWeight;
 	max-width: $smTableWidth;
-	min-width: $smPhoneWidth;
 	margin: 0 auto;
 	background-color: $primaryColor;
 	scroll-behavior: smooth;
@@ -25,12 +24,10 @@ body {
 	}
 
 	&:active {
-		transform: scale(0.95);
+		transform: scale(0.9);
 	}
 }
 
 .container {
-	position: relative;
-	width: 90%;
-	margin: 0 auto;
+	width: 95%;
 }

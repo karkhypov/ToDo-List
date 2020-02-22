@@ -5,7 +5,7 @@ function addTask(task) {
 	const li = document.createElement('li');
 	li.classList.add('list__item');
 	li.innerHTML = `<p class="list__text">${task}</p>
-									<i class="list__remove fas fa-trash-alt"></i>`;
+									<i class="list__remove-icon fas fa-trash-alt"></i>`;
 	taskList.append(li);
 }
 
@@ -18,7 +18,7 @@ inputForm.addEventListener('submit', e => {
 });
 
 taskList.addEventListener('click', e => {
-	if (e.target.matches('.list__remove')) {
+	if (e.target.matches('.list__remove-icon')) {
 		const listItem = e.target.closest('.list__item');
 		listItem.classList.toggle('fade');
 		setTimeout(() => {
