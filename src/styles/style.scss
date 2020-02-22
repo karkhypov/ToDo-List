@@ -3,58 +3,83 @@
 @import 'helpers/mixins';
 @import 'helpers/base';
 
+.checked {
+	font-style: italic;
+	text-decoration: line-through;
+	opacity: 0.4;
+	transition: 0.4s;
+}
+
+.fade {
+	opacity: 0;
+	transition: 0.5s linear;
+}
+
 .todo {
 	margin-top: 15px;
 	padding: 25px;
-	background-color: #fff;
+	background-color: $backGroundColor;
 	border-radius: 20px;
 	box-shadow: 0 0 15px black;
+	transition: 0.3s;
 }
 
-.input {
+.input-form {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	height: 45px;
 
+	.button {
+		border-radius: 0 5px 5px 0;
+	}
+
 	&__field {
 		font-size: 1.2rem;
 		padding: 0 10px 0 10px;
-		border: 1px solid #ebe1e1;
+		border: 1px solid $borderColor;
 		border-right: none;
+		border-radius: 5px 0 0 5px;
+		transition: 0.3s;
+
+		&::placeholder {
+			opacity: 0.8;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: $primaryColor;
+		}
 	}
 }
 
 .list {
-	margin-top: 20px;
+	transition: 0.3s;
 
 	&__item {
 		display: grid;
 		grid-template-columns: 1fr auto;
-		// grid-gap: 0.5rem;
+		grid-gap: 0.5rem;
 		align-items: center;
 		min-height: 45px;
-		border-bottom: 1px solid #ebe1e1;
-		transition: 0.3s linear;
+		border-bottom: 1px solid $borderColor;
+		transition: 0.3s;
 
-		// &:nth-child(even) {
-		// 	background-color: #edf1f5;
-		// }
-
-		&:hover .list__icon {
+		&:hover .list__remove {
 			opacity: 1;
 			margin-right: 5px;
 		}
 	}
 
 	&__text {
-		font-size: 1.1rem;
+		font-size: 0.9rem;
+		cursor: pointer;
 	}
 
-	&__icon {
-		@include size(25px, 25px);
+	&__remove {
 		opacity: 0;
 		color: $mainFontColor;
-		transition: 0.2s linear;
+		transition: 0.2s;
 
 		&:hover {
 			color: $primaryColor;
