@@ -3,10 +3,13 @@ const taskList = document.querySelector('.list');
 
 function addTask(task) {
 	const li = document.createElement('li');
+	const span = document.createElement('span');
+	span.textContent = task;
 	li.classList.add('list__item', 'fade');
-	li.innerHTML = `<p class="list__text">${task}</p>
-									<i class="list__remove-icon fas fa-trash-alt"></i>`;
+	li.innerHTML = `<p class="list__text"></p>
+	<i class="list__remove-icon fas fa-trash-alt"></i>`;
 	taskList.prepend(li);
+	document.querySelector('.list__item .list__text').append(span);
 	setTimeout(() => {
 		li.classList.remove('fade');
 	}, 50);
@@ -14,9 +17,9 @@ function addTask(task) {
 
 inputForm.addEventListener('submit', e => {
 	e.preventDefault();
-	const newTask = e.currentTarget.inputForm.value;
-	if (!newTask) return;
-	addTask(newTask);
+	const userInput = e.currentTarget.inputForm.value;
+	if (!userInput) return;
+	addTask(userInput);
 	e.target.reset();
 });
 
