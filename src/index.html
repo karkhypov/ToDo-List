@@ -16,6 +16,13 @@
 		<script src="js/script.js" defer></script>
 	</head>
 	<body class="container">
+		<template id="newTaskTemplate">
+			<li class="list__item fade">
+				<p class="list__text"></p>
+				<i class="list__remove-icon fas fa-trash-alt"></i>
+			</li>
+		</template>
+
 		<div class="todo">
 			<form class="input-form" autocomplete="off">
 				<input class="input-form__field" type="text" placeholder="Title" name="inputForm" id="inputForm" />

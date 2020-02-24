@@ -1,16 +1,14 @@
 const inputForm = document.querySelector('.input-form');
 const taskList = document.querySelector('.list');
+const newTaskTemplate = document.querySelector('#newTaskTemplate');
 
 function addTask(task) {
-	const li = document.createElement('li');
-	li.classList.add('list__item', 'fade');
-	li.innerHTML = `<p class="list__text"></p>
-	<i class="list__remove-icon fas fa-trash-alt"></i>`;
-	taskList.prepend(li);
-	document.querySelector('.list__text').textContent = task;
+	const newTask = document.importNode(newTaskTemplate.content, true);
+	newTask.querySelector('.list__text').textContent = task;
+	taskList.prepend(newTask);
 	setTimeout(() => {
-		li.classList.remove('fade');
-	}, 50);
+		document.querySelector('.list__item').classList.remove('fade');
+	}, 0);
 }
 
 inputForm.addEventListener('submit', e => {
@@ -24,7 +22,7 @@ inputForm.addEventListener('submit', e => {
 taskList.addEventListener('click', e => {
 	if (e.target.matches('.list__remove-icon')) {
 		const listItem = e.target.closest('.list__item');
-		listItem.classList.toggle('fade');
+		listItem.classList.add('fade');
 		setTimeout(() => {
 			listItem.remove();
 		}, 350);
