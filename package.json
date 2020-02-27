@@ -1,34 +1,42 @@
 {
-	"name": "todo-list",
-	"version": "1.0.0",
-	"description": "Simple ToDo List on pure JS",
-	"author": "Kirill Arkhypov",
-	"license": "MIT",
-	"main": "src/index.html",
-	"scripts": {
-		"dev": "npm run clean && parcel src/index.html --open",
-		"build": "npm run clean && parcel build src/index.html",
-		"clean": "rm -rf dist/*"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"@babel/core": "^7.8.4",
-		"@babel/preset-env": "^7.8.4",
-		"autoprefixer": "^9.7.4",
-		"node-sass": "^4.13.1",
-		"parcel-bundler": "^1.12.4",
-		"postcss-modules": "^1.5.0"
-	},
-	"dependencies": {}
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Simple ToDo List on pure JS",
+  "author": "Kirill Arkhypov",
+  "license": "MIT",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "npm run clean && parcel src/index.html --open",
+    "build": "npm run clean && parcel build src/index.html",
+    "clean": "rm -rf dist/*"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "node-sass": "^4.13.1",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.5.0",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {}
 }

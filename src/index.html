@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>To Do List</title>
-		<link rel="icon" type="image/png" href="favicon/favicon.png" />
-		<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-			integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="styles/style.scss" />
-		<script src="js/script.js" defer></script>
-	</head>
-	<body class="container">
-		<template id="newTaskTemplate">
-			<li class="list__item fade">
-				<p class="list__text"></p>
-				<i class="list__remove-icon fas fa-trash-alt"></i>
-			</li>
-		</template>
 
-		<div class="todo">
-			<form class="input-form" autocomplete="off">
-				<input class="input-form__field" type="text" placeholder="Title" name="inputForm" id="inputForm" />
-				<button class="button input-form__button" type="submit">+ Add</button>
-			</form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List</title>
+  <link rel="icon" type="image/png" href="favicon/favicon.png" />
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles/style.scss" />
+  <script src="js/script.js" defer></script>
+</head>
 
-			<ul class="list">
-				<li class="list__item">
-					<p class="list__text checked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quam.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-				<li class="list__item">
-					<p class="list__text">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-				<li class="list__item">
-					<p class="list__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-				<li class="list__item">
-					<p class="list__text">Lorem ipsum dolor sit amet.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-				<li class="list__item">
-					<p class="list__text">Lorem ipsum dolor sit amet.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-				<li class="list__item">
-					<p class="list__text">Lorem ipsum dolor sit amet.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-				<li class="list__item">
-					<p class="list__text">Lorem ipsum dolor sit amet.</p>
-					<i class="list__remove-icon fas fa-trash-alt"></i>
-				</li>
-			</ul>
-		</div>
-	</body>
+<body class="container">
+
+  <template id="newTaskTemplate">
+    <li class="list__item fade">
+      <p class="list__text"></p>
+      <i class="list__remove-icon fas fa-trash-alt"></i>
+    </li>
+  </template>
+
+  <div class="todo">
+    <form class="input-form" autocomplete="off">
+      <input class="input-form__field" type="text" placeholder="Title" name="inputForm" id="inputForm" />
+      <button class="button input-form__button" type="submit">+ Add</button>
+    </form>
+
+    <ul class="list">
+      <li class="list__item">
+        <p class="list__text checked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quam.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+      <li class="list__item">
+        <p class="list__text">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+      <li class="list__item">
+        <p class="list__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+      <li class="list__item">
+        <p class="list__text">Lorem ipsum dolor sit amet.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+      <li class="list__item">
+        <p class="list__text">Lorem ipsum dolor sit amet.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+      <li class="list__item">
+        <p class="list__text">Lorem ipsum dolor sit amet.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+      <li class="list__item">
+        <p class="list__text">Lorem ipsum dolor sit amet.</p>
+        <i class="list__remove-icon fas fa-trash-alt"></i>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
 </html>

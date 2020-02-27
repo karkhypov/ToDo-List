@@ -1,33 +1,33 @@
 html,
 body {
-	position: relative;
-	font-family: $mainFont;
-	color: $mainFontColor;
-	font-size: $mainFontSize;
-	line-height: $mainLineHeight;
-	font-weight: $mainFontWeight;
-	max-width: $smTableWidth;
-	margin: 0 auto;
-	background-color: $primaryColor;
-	scroll-behavior: smooth;
+  position: relative;
+  font-family: $mainFont;
+  color: $mainFontColor;
+  font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  font-weight: $mainFontWeight;
+  max-width: $smTableWidth;
+  margin: 0 auto;
+  background-color: $primaryColor;
+  scroll-behavior: smooth;
 }
 
 .button {
-	@include size(135px, 45px);
-	color: $backGroundColor;
-	background-color: $primaryColor;
-	cursor: pointer;
-	transition: 0.3s linear;
+  @include size(135px, 45px);
+  color: $backGroundColor;
+  background-color: $primaryColor;
+  cursor: pointer;
+  transition: 0.3s linear;
 
-	&:hover {
-		opacity: 0.8;
-	}
+  &:hover {
+    opacity: 0.8;
+  }
 
-	&:active {
-		transform: scale(0.9);
-	}
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 .container {
-	width: 95%;
+  width: 95%;
 }
