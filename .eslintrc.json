@@ -1,13 +1,20 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "node": true,
+    "jquery": true,
+    "jest": true
   },
   "extends": [
     "airbnb-base",
-    "plugin:prettier/recommended"
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
+    "import",
+    "jsx-a11y",
+    "html",
     "prettier"
   ],
   "globals": {
@@ -15,7 +22,11 @@
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "classes": true
+    },
     "sourceType": "module"
   },
   "rules": {
