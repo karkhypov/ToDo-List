@@ -20,7 +20,7 @@ inputForm.addEventListener('submit', e => {
 });
 
 taskList.addEventListener('click', e => {
-  if (e.target.matches('.list__remove-icon')) {
+  if (e.target.matches('.list__remove')) {
     const listItem = e.target.closest('.list__item');
     listItem.classList.add('fade');
     setTimeout(() => {

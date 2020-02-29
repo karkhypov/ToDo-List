@@ -19,7 +19,8 @@ body {
   cursor: pointer;
   transition: 0.3s linear;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.8;
   }
 
