@@ -25,7 +25,11 @@ function addTask(task, checked = false) {
   li.innerHTML = `<p class="list__text"></p>
 	<i class="list__remove fas fa-trash-alt"></i>`;
   taskList.prepend(li);
-  document.querySelector('.list__text').textContent = task;
+  const p = document.querySelector('.list__text');
+  p.textContent = task;
+  if (newTaskItem.checked) {
+    p.classList.add('checked');
+  }
   tasks.push(newTaskItem);
   setTimeout(() => {
     li.classList.remove('fade');
