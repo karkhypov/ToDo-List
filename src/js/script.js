@@ -10,38 +10,44 @@ function randomID() {
 }
 
 function updateStorage() {
+  if (!tasks.length) {
+    localStorage.removeItem('tasks');
+    return;
+  }
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-function addTask(task, checked = false) {
+function addTask(task, id = randomID(), checked = false) {
   const newTaskItem = {
-    value: task,
-    id: randomID(),
+    task,
+    id,
     checked,
   };
+  tasks.push(newTaskItem);
+
   const li = document.createElement('li');
   li.classList.add('list__item', 'fade');
   li.id = newTaskItem.id;
   li.innerHTML = `<p class="list__text"></p>
-	<i class="list__remove fas fa-trash-alt"></i>`;
+	<button class="list__remove fas fa-trash-alt"></button>`;
   taskList.prepend(li);
+  setTimeout(() => {
+    li.classList.remove('fade');
+  }, 0);
+
   const p = document.querySelector('.list__text');
   p.textContent = task;
   if (newTaskItem.checked) {
     p.classList.add('checked');
   }
-  tasks.push(newTaskItem);
-  setTimeout(() => {
-    li.classList.remove('fade');
-  }, 0);
+
   updateStorage();
 }
 
 function loadFromStorage() {
   const storageItems = JSON.parse(localStorage.getItem('tasks'));
-  localStorage.clear();
   if (storageItems) {
-    storageItems.forEach(task => addTask(task.value, task.checked));
+    storageItems.forEach(item => addTask(item.task, item.id, item.checked));
   }
 }
 
@@ -55,15 +61,15 @@ inputForm.addEventListener('submit', e => {
 
 taskList.addEventListener('click', e => {
   const listItem = e.target.closest('.list__item');
-  const taskInStorage = tasks.find(i => i.id === listItem.id);
+  const taskInStorage = tasks.find(task => task.id === listItem.id);
 
   if (e.target.matches('.list__remove')) {
     listItem.classList.add('fade');
+    tasks.splice(tasks.indexOf(taskInStorage), 1);
     setTimeout(() => {
-      tasks.splice(tasks.indexOf(taskInStorage), 1);
       listItem.remove();
-      updateStorage();
     }, 350);
+    updateStorage();
   }
 
   if (e.target.matches('.list__text')) {
