@@ -28,8 +28,8 @@ function addTask(task, id = randomID(), checked = false) {
   const li = document.createElement('li');
   li.classList.add('list__item', 'fade');
   li.id = newTaskItem.id;
-  li.innerHTML = `<p class="list__text"></p>
-	<button class="list__remove fas fa-trash-alt"></button>`;
+  li.innerHTML = `<p class="list__text" tabindex="0"></p>
+	<button aria-label="${task}" class="list__remove fas fa-trash-alt"></button>`;
   taskList.prepend(li);
   setTimeout(() => {
     li.classList.remove('fade');

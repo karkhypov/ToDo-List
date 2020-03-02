@@ -67,7 +67,7 @@
 
     &:hover .list__remove {
       opacity: 1;
-      transform: translate(-3px);
+      transform: translateX(0);
     }
   }
 
@@ -76,6 +76,10 @@
     overflow-wrap: break-word;
     padding: 5px;
     cursor: pointer;
+
+    &:focus {
+      color: $primaryColor;
+    }
   }
 
   &__remove {
@@ -84,10 +88,16 @@
     background-color: transparent;
     transition: 0.2s linear;
     cursor: pointer;
+    transform: translateX(3px);
 
     &:hover,
     &:focus {
       color: $primaryColor;
+    }
+
+    &:focus {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     &:active {
