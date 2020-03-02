@@ -43,13 +43,6 @@
 }
 
 .list {
-  .checked {
-    font-style: italic;
-    text-decoration: line-through;
-    opacity: 0.4;
-    transition: 0.2s linear;
-  }
-
   .fade {
     height: 0;
     opacity: 0;
@@ -73,55 +66,57 @@
   }
 
   &__checkbox {
-    position: relative;
-    display: block;
-    @include size(25px);
-    cursor: pointer;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
 
-    &--input {
+    & + label::before {
+      content: '';
       position: absolute;
-      z-index: -1;
-      opacity: 0;
-
-      & + label::before {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        @include size(20px);
-        border: 1px solid $borderColor;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.2s linear;
-      }
-
-      &:checked + label::before {
-        border: 1px solid $primaryColor;
-        background-color: $primaryColor;
-      }
-
-      &:checked + label::after {
-        content: '';
-        position: absolute;
-        top: 8px;
-        left: 6px;
-        @include size(12px, 6px);
-        border-left: 2px solid $backGroundColor;
-        border-bottom: 2px solid $backGroundColor;
-        transform: rotate(-45deg);
-        cursor: pointer;
-        transition: all 0.2s linear;
-      }
+      top: 11px;
+      left: 5px;
+      @include size(20px);
+      border: 1px solid $borderColor;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s linear;
     }
 
-    label {
-      &:hover::before {
-        border-color: $primaryColor;
-      }
+    &:checked + label::before {
+      border: 1px solid $primaryColor;
+      background-color: $primaryColor;
+    }
 
-      &:active::before {
-        opacity: 0.4;
-      }
+    &:checked + label::after {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: 9px;
+      @include size(12px, 6px);
+      border-left: 2px solid $backGroundColor;
+      border-bottom: 2px solid $backGroundColor;
+      transform: rotate(-45deg);
+      cursor: pointer;
+      transition: all 0.2s linear;
+    }
+
+    &:checked ~ .list__text {
+      font-style: italic;
+      text-decoration: line-through;
+      opacity: 0.4;
+      transition: all 0.2s linear;
+    }
+  }
+
+  label {
+    @include size(25px);
+
+    &:hover::before {
+      border-color: $primaryColor;
+    }
+
+    &:active::before {
+      opacity: 0.4;
     }
   }
 
