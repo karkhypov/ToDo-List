@@ -28,8 +28,15 @@ function addTask(task, id = randomID(), checked = false) {
   const li = document.createElement('li');
   li.classList.add('list__item', 'fade');
   li.id = newTaskItem.id;
-  li.innerHTML = `<p class="list__text" tabindex="0"></p>
-	<button aria-label="${task}" class="list__remove fas fa-trash-alt"></button>`;
+  li.innerHTML = `
+  <div class="list__checkbox">
+    <input type="checkbox" class="list__checkbox--input" id="${
+      newTaskItem.id
+    }" name="checkbox-button" value="${task}" name="task checkbox" ${newTaskItem.checked && 'checked'}>
+    <label for="${newTaskItem.id}"></label>
+  </div>
+  <p class="list__text" tabindex="0"></p>
+	<button aria-label="remove ${task}" class="list__remove fas fa-trash-alt"></button>`;
   taskList.prepend(li);
   setTimeout(() => {
     li.classList.remove('fade');
@@ -72,8 +79,9 @@ taskList.addEventListener('click', e => {
     updateStorage();
   }
 
-  if (e.target.matches('.list__text')) {
-    e.target.classList.toggle('checked');
+  if (e.target.matches('label')) {
+    listItem.querySelector('.list__text').classList.toggle('checked');
+    listItem.querySelector('.list__checkbox--input').checked = !taskInStorage.checked;
     taskInStorage.checked = !taskInStorage.checked;
     updateStorage();
   }
