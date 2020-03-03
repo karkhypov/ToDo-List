@@ -42,7 +42,7 @@ function addTask(task, id = randomID(), checked = false) {
   taskList.prepend(li);
   setTimeout(() => {
     li.classList.remove('fade');
-  }, 0);
+  }, 50);
 
   const p = document.querySelector('.list__text');
   p.textContent = task;
