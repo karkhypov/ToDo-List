@@ -32,7 +32,8 @@ function addTask(task, id = randomID(), checked = false) {
   const li = document.createElement('li');
   li.classList.add('list__item', 'fade');
   li.id = newTaskItem.id;
-  li.innerHTML = `<input type="checkbox" class="list__checkbox" id="${
+  li.innerHTML = `
+  <input type="checkbox" class="list__checkbox" id="${
     newTaskItem.id
   }" name="checkbox-button" value="${task}" name="task checkbox" ${newTaskItem.checked && 'checked'}>
   <label for="${newTaskItem.id}"></label>
