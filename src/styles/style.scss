@@ -50,7 +50,6 @@
   }
 
   &__item {
-    position: relative;
     display: grid;
     grid-template-columns: auto minmax(100px, 1fr) auto;
     grid-gap: 0.5rem;
@@ -73,8 +72,8 @@
     & + label::before {
       content: '';
       position: absolute;
-      top: 11px;
-      left: 5px;
+      top: 2.5px;
+      left: 2.5px;
       @include size(20px);
       border: 1px solid $borderColor;
       border-radius: 50%;
@@ -90,8 +89,8 @@
     &:checked + label::after {
       content: '';
       position: absolute;
-      top: 17px;
-      left: 9px;
+      top: 8px;
+      left: 6.5px;
       @include size(12px, 6px);
       border-left: 2px solid $backGroundColor;
       border-bottom: 2px solid $backGroundColor;
@@ -109,6 +108,7 @@
   }
 
   label {
+    position: relative;
     @include size(25px);
 
     &:hover::before {
