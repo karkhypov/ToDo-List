@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "src/index.html",
   "scripts": {
-    "dev": "npm run clean && parcel src/index.html --open",
+    "start": "npm run clean && parcel src/index.html --open",
     "build": "npm run clean && parcel build src/index.html",
     "clean": "rm -rf dist/*"
   },
